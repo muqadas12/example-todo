@@ -1,7 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
+import usemyToggle from 'use-my-tog';
 
 function App() {
+  const [isOn, setIsOn] = usemyToggle();
   return (
     <div className="App">
       <header className="App-header">
@@ -17,6 +19,9 @@ function App() {
         >
           Learn React
         </a>
+        <button onClick={() => setIsOn((isOn) => !isOn)}>
+          isActive {`${isOn}`}
+        </button>
       </header>
     </div>
   );
